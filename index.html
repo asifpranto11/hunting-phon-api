@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunting phon API</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+
+<body>
+    <header>
+        <h2 class="text-6xl">Hunting Phon</h2>
+    </header>
+    <main class="container mx-auto mt-8">
+        <!--Search -->
+        <section class="bg-gray-100 p-4 m-4">
+            <input id="search-field" type="text" placeholder="Search...."
+                class="input input-bordered input-accent w-full max-w-xs" />
+
+            <button onclick="handleSearch()" class="btn btn-primary mt-5 ">Search</button>
+
+        </section>
+        <!--another search
+        <section class="bg-gray-100 p-4 m-4">
+            <input id="search-field-two"
+            type="text"
+            placeholder="Search...."
+            class="input input-bordered input-accent w-full max-w-xs" />
+            <button  onclick="handleSearchTwo()" class="btn btn-accent">Accent</button>
+        </section>-->
+
+
+
+        <section>
+            <!--spinner-->
+            <div id="loading-spinner" class="text-center my-40 hidden">
+                <span class="loading loading-spinner loading-lg"></span>
+            </div>
+
+            <div id="phon-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 space-y-4 ">
+                <!---- <div class="card bg-gray-100 w-96 shadow-xl">
+                    <figure>
+                      <img
+                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                        alt="Shoes" />
+                    </figure>
+                    <div class="card-body">
+                      <h2 class="card-title">Shoes!</h2>
+                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Buy Now</button>
+                      </div>
+                    </div>
+                  </div>-->
+
+            </div>
+
+            <!--show all button-->
+            <div onclick="handleShowAll()" id="show-all-container" class="hidden text-center my-8">
+                <button class="btn btn-warning">Show All</button>
+            </div>
+        </section>
+
+        <!--show details modal-->
+        <!-- Open the modal using ID.showModal() method -->
+
+<dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <h3 id="phone-name" class="text-3xl font-bold"></h3>
+   <div  id="show-detail-container">
+
+   </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn btn-active btn-primary">Close</button>
+      </form>
+    </div>
+  
+  </div>
+</dialog>
+    </main>
+
+
+    <script src="js/phon.js"></script>
+</body>
+
+</html>
